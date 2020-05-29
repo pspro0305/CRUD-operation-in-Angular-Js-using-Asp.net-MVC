@@ -1,0 +1,97 @@
+﻿<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<div class="container">
+    <h3>Simple CRUD Application Using Angular JS and asp.net mvc. - Prakhar Srivastava</h3>
+    <hr>
+    <div class="row">
+        <div class="panel panel-primary filterable" ng-controller="myCntrl">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Employee Details
+                </h3>
+            </div>
+            <div class="panel-body">
+                <br />
+                <input type="button" class="btn btn-primary" value="Add Employee" ng-click="AddEmployeeDiv()" />
+                <br />
+                <div class="divList">
+                    <p class="divHead"></p>
+                    <table cellpadding="12" class="table table-bordered table-hover">
+                        <tr>
+                            <td><b>ID</b></td>
+                            <td><b>Name</b></td>
+                            <td><b>Email</b></td>
+                            <td><b>Contact No.</b></td>
+                            <td><b>Actions</b></td>
+                        </tr>
+                        <tr ng-repeat="employee in employees">
+                            <td>
+                                {{employee.Id}}
+                            </td>
+                            <td>
+                                {{employee.name}}
+                            </td>
+                            <td>
+                                {{employee.email}}
+                            </td>
+                            <td>
+                                {{employee.mobileno}}
+                            </td>
+                            <td>
+                                <span ng-click="editEmployee(employee)" class="btn btn-success">Edit</span>
+                                <span ng-click="deleteEmployee(employee)" class="btn btn-danger">Delete</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-6">
+                        <div ng-show="divEmployee">
+                            <p class="divHead">{{Action}} Employee</p>
+                            <table>
+                                <tr>
+                                    <td><b>Id</b></td>
+                                    <td>
+                                        <input type="text" class="form-control" disabled="disabled" ng-model="employeeId" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Name</b></td>
+                                    <td>
+                                        <input type="text" class="form-control" ng-model="employeeName" required />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Email</b></td>
+                                    <td>
+                                        <input type="email" class="form-control" ng-model="employeeEmail" required />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Contact no</b></td>
+                                    <td>
+                                        <input type="text" class="form-control" ng-model="mobileno" required />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="button" class="btn btn-success" value="Save" ng-click="AddUpdateEmployee()" />
+                                        <input type="button" class="btn btn-danger" value="Reset" ng-click="ResetForm()" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+

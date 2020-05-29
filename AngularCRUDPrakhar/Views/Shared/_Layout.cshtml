@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title</title>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Content/AngularAssets/Module.js"></script>
+    <script src="~/Content/AngularAssets/Service.js"></script>
+    <script src="~/Content/AngularAssets/Controller.js"></script>
+    @Styles.Render("~/Content/css")
+    <style>
+
+    </style>
+</head>
+<body>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
